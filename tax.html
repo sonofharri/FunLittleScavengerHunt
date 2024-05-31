@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+	<title>???</title>
+	<style>
+		html, body {
+			background-color: black;
+			overflow: hidden;
+		}
+		.ctr {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		button {
+			transition: 0.5s;
+			font-family: "Ubuntu", Roboto, sans-serif;
+			position: absolute;
+			bottom: 10%;
+			border-radius: 20%;
+			height: 5vw;
+			width: 5vw;
+			border: 0.1vw double #222;
+			padding: 1vw;
+			z-index: 10;
+			background: #1D1D1D;
+			text-align: center;
+			color: white;
+			box-shadow: 0 0 200px rgba(0,0,0,0.9) inherit;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="ctr">
+		<video id="myVideo" width="80%" height="80%">
+			<source src="clue8.mp4" type="video/mp4">
+		</video>
+		<button id="playButton">Click me?</button>
+	</div>
+	
+	<script>
+		const video = document.getElementById("myVideo");
+		const playButton = document.getElementById("playButton");
+
+		function playVideo() {
+			video.play();
+			video.muted = false;
+			playButton.remove();
+		}
+
+		playButton.addEventListener("click", playVideo);
+	</script>
+</body>
+
+</html>
